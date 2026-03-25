@@ -1,64 +1,171 @@
+# Helmet Detection using YOLOv8
 
-##  Helmet Detection using YOLOv8
+## Overview
 
-This project implements a **helmet detection system** using the Motorbike Helmet Detection dataset and the YOLOv8 object detection model. The goal is to identify riders **with and without helmets** in real-world traffic images, contributing to road safety applications.
+This project implements a **helmet detection system** using the YOLOv8 object detection model. The goal is to identify whether motorbike riders are wearing helmets or not in real-world traffic images, contributing to improved road safety and automated traffic monitoring systems.
 
-### Dataset
+---
 
-* **Total images:** 764
-* **Annotated images:** 747
-* **Classes:** `helmet`, `no helmet`
-* **Total objects:** 1420
-* Balanced class distribution with real-world traffic scenarios
+## Objectives
 
-### Project Pipeline
+* Detect motorbike riders in images
+* Classify riders as **helmet** or **no helmet**
+* Build a reliable object detection model using YOLOv8
+* Evaluate performance using standard metrics
 
-1. **Data Preprocessing**
+---
 
-   * Converted XML annotations to YOLO format
-   * Normalized class labels
-   * Split dataset into train/test sets
-   * Generated `data.yaml` for training
+## Dataset
 
-2. **Model Training**
+* **Source:** Kaggle – Motorbike Helmet Detection Dataset
+* **Total Images:** 764
+* **Annotated Images:** 747
+* **Classes:**
 
-   * Model: YOLOv8 (nano variant)
-   * Image size: 416
-   * Epochs: 50
-   * Trained on CPU
+  * Helmet
+  * No Helmet
+* **Total Objects:** 1420
 
-3. **Evaluation**
+The dataset contains real-world traffic scenarios, making it suitable for practical applications.
 
-   * mAP@50: **0.8079**
-   * mAP@50–95: **0.4828**
-   * Precision: **0.7881**
-   * Recall: **0.7697**
+---
 
-### Results
+## Project Pipeline
 
-The model demonstrates strong performance in detecting helmet usage, making it suitable for **traffic monitoring and safety enforcement systems**.
+### 1️⃣ Data Preprocessing
 
-### Features
+* Converted XML annotations to YOLO format
+* Normalized class labels
+* Split dataset into training and testing sets (80–20)
+* Generated `data.yaml` file for YOLOv8
 
-* End-to-end pipeline (data prep → training → testing)
-* Automated dataset conversion for YOLOv8
-* Reliable detection in real-world scenarios
+### 2️⃣ Model Training
 
-### Tech Stack
+* Model: YOLOv8 (Nano variant)
+* Epochs: 50
+* Image Size: 416
+* Batch Size: 2
+* Device: CPU
+
+### 3️⃣ Evaluation Metrics
+
+* mAP@50
+* mAP@50–95
+* Precision
+* Recall
+
+---
+
+## Results
+
+| Metric    | Value  |
+| --------- | ------ |
+| mAP@50    | 0.8079 |
+| mAP@50–95 | 0.4828 |
+| Precision | 0.7881 |
+| Recall    | 0.7697 |
+
+The model demonstrates strong performance in detecting helmet usage in real-world conditions.
+
+---
+
+## Features
+
+* End-to-end pipeline (data preparation → training → testing)
+* Automatic annotation conversion to YOLO format
+* Works on real-world traffic images
+* Lightweight model suitable for deployment
+
+---
+
+## Tech Stack
 
 * Python
-* Ultralytics YOLOv8
-* OpenCV, XML parsing
+* YOLOv8 (Ultralytics)
+* OpenCV
+* XML Parsing
 * Scikit-learn
 
-### Code
+---
 
-Includes scripts for:
+## 📂 Project Structure
 
-* Dataset preparation
-* Model training
-* Validation
-* Testing
-* Dataset Inspection
+```
+Traffic_Helmet_Detection/
+│
+├── annotations/          # XML annotation files
+├── images/               # Dataset images
+├── train.py              # Training script
+├── val.py                # Validation script
+├── test.py               # Testing script
+├── prepare_dataset.py    # Dataset preprocessing
+├── dataset_check.py      # Dataset analysis
+└── README.md
+```
 
+---
+
+## 🚀 How to Run
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/MR1234567891p/Traffic_Helmet_Detection.git
+cd Traffic_Helmet_Detection
+```
+
+### 2️⃣ Install dependencies
+
+```bash
+pip install ultralytics opencv-python scikit-learn
+```
+
+### 3️⃣ Prepare dataset
+
+```bash
+python prepare_dataset.py
+```
+
+### 4️⃣ Train model
+
+```bash
+python train.py
+```
+
+### 5️⃣ Evaluate model
+
+```bash
+python val.py
+```
+
+### 6️⃣ Test model
+
+```bash
+python test.py
+```
+
+---
+
+## Model Weights
+
+Trained model weights (`best.pt`) are not included due to size limitations.
+The model can be reproduced using the provided training script.
+
+---
+
+## Applications
+
+* Traffic monitoring systems
+* Automated fine detection
+* Smart city solutions
+* Road safety enforcement
+
+---
+
+## Future Work
+
+* Train on larger datasets
+* Use GPU for faster training
+* Extend to real-time video detection
+* Improve detection accuracy
 
