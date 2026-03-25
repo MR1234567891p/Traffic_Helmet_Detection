@@ -1,0 +1,7 @@
+path: F:\7th sem lab\4709_HELMET_YOLOV8\images\helmet_dataset
+train: images/train
+val: images/test
+test: images/test
+names:
+  0: with_helmet
+  1: without_helmet
