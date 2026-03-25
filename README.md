@@ -58,6 +58,7 @@ Includes scripts for:
 * Dataset preparation
 * Model training
 * Validation
-* Testing 
+* Testing
+* Dataset Inspection
 
 
