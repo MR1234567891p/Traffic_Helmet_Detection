@@ -88,7 +88,7 @@ The model demonstrates strong performance in detecting helmet usage in real-worl
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Traffic_Helmet_Detection/
@@ -105,7 +105,7 @@ Traffic_Helmet_Detection/
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### 1️⃣ Clone the repository
 
@@ -168,4 +168,11 @@ The model can be reproduced using the provided training script.
 * Use GPU for faster training
 * Extend to real-time video detection
 * Improve detection accuracy
+
+---
+
+## Author
+
+### Maisha Rahman
+Electrical and Electronic Engineering Student.
 
